@@ -2,7 +2,7 @@ package ru.java.homeworks.homework3;
 
 import java.util.Scanner;
 
-public class mainApp {
+public class MainApp {
 
     public static void main(String[] args) {
 
@@ -54,10 +54,10 @@ public class mainApp {
     }
 
     public static void selectColor(){
-        int data = 21;
+        int data = 15;
         if (data <= 10) {
             System.out.println("Красный");
-        } else if (data > 10 && data <= 20 ) {
+        } else if (data <= 20 ) {
             System.out.println("Желтый");
         } else{
             System.out.println("Зеленый");
@@ -76,7 +76,7 @@ public class mainApp {
     }
 
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment){
-        if (increment = true) {
+        if (increment) {
             System.out.println(initValue + delta);
         } else {
             System.out.println(initValue - delta);
