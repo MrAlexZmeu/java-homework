@@ -8,16 +8,16 @@ import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args) {
         int quantity = 5;
-        String words = "Hello java!";
-        printString(5, words);
+        String word = "Hello java!";
+        printWord(5, word);
         System.out.println("");
 
         int[] arr = {1, 7, 10, 15, 16, 18};
-        sumArray(arr);
+        sum(arr);
         System.out.println("");
 
         int[] arrayInput = new int[10];
-        changeArray(5, arrayInput);
+        fill(5, arrayInput);
         System.out.println("");
 
         int[] arrayNumbers = {2, 56, 33, 85, 24, 15};
@@ -33,36 +33,36 @@ public class MainApp {
         sumArrays(arrData);
 
         System.out.println("");
-        int[] arrPoint = {5,3,4,-2};
+        int[] arrPoint = {5, 1, 3, 4, -1};
         pointSum(arrPoint);
 
         System.out.println("");
-        int[] arrayOrder = {5,4,3,2,1};
+        int[] arrayOrder = {5, 4, 3, 2, 1};
         orderArray(arrayOrder);
 
         System.out.println("");
-        int[] arrForTurn = {1,2,3,4,5,6,7,8,9};
+        int[] arrForTurn = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         turnArray(arrForTurn);
     }
 
 
-    public static void printString(int quantity, String words) {
+    public static void printWord(int quantity, String word) {
         for (int i = 0; i < quantity; i++) {
-            System.out.println(words);
+            System.out.println(word);
         }
     }
 
-    public static void sumArray(int[] arrayForSum) {
-        int sum = 0;
+    public static void sum(int[] arrayForSum) {
+        int sumArray = 0;
         for (int i = 0; i < arrayForSum.length; i++) {
             if (arrayForSum[i] > 5) {
-                sum += arrayForSum[i];
+                sumArray += arrayForSum[i];
             }
         }
-        System.out.println(sum);
+        System.out.println(sumArray);
     }
 
-    public static void changeArray(int num, int[] arrayData) {
+    public static void fill(int num, int[] arrayData) {
         for (int i = 0; i < arrayData.length; i++) {
             arrayData[i] = num;
         }
@@ -92,6 +92,10 @@ public class MainApp {
             System.out.println("Сумма первой половины массива больше!");
             return;
         }
+        if (firstHalf == secondHalf) {
+            System.out.println("Сумма половин массив равна!");
+            return;
+        }
         System.out.println("Сумма второй половины массива больше!");
 
     }
@@ -119,14 +123,17 @@ public class MainApp {
     public static void pointSum(int[] arr) {
         int sum = 0;
         int sumHalf = 0;
+        int sumArray = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sumArray += arr[i];
+        }
+
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
-            sumHalf = 0;
-            for (int j = i + 1; j < arr.length; j++) {
-                sumHalf += arr[j];
-            }
+            sumArray -= arr[i];
 
-            if (sum == sumHalf) {
+            if (sum == sumArray) {
                 System.out.println("Точка после индекса " + i);
                 return;
             }
@@ -145,7 +152,7 @@ public class MainApp {
         }
         switch (resultIn) {
             case 1:
-                for (int i = 0; i < arr.length-1; i++) {
+                for (int i = 0; i < arr.length - 1; i++) {
                     if (arr[i] > arr[i + 1]) {
                         System.out.println("Массив не упорядочен по возрастанию");
                         return;
@@ -154,7 +161,7 @@ public class MainApp {
                 System.out.println("Массив упорядочен по возрастанию");
                 return;
             case 2:
-                for (int i = 0; i < arr.length-1; i++) {
+                for (int i = 0; i < arr.length - 1; i++) {
                     if (arr[i] < arr[i + 1]) {
                         System.out.println("Массив не упорядочен по убыванию");
                         return;
@@ -167,12 +174,13 @@ public class MainApp {
 
         }
     }
+
     private static void turnArray(int[] arr) {
-        for (int i = 0; i < arr.length/2; i++) {
-        int buff = 0;
-        buff = arr[i];
-        arr[i] = arr[arr.length-1-i];
-        arr[arr.length-1-i] = buff;
+        for (int i = 0; i < arr.length / 2; i++) {
+            int buff = 0;
+            buff = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = buff;
         }
         System.out.println(Arrays.toString(arr));
     }
