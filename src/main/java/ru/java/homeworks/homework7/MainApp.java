@@ -10,14 +10,21 @@ public class MainApp {
         System.out.println(sumArray);
 
         System.out.println("");
-        printSquad(4);
+        printSquare(4);
 
         System.out.println("");
         int[][] squadArray = {{1, 2, 3, 4},
-                                {5, 6, 7, 8},
-                                {9, 8, 7, 6},
-                                {5, 4, 3, 2}};
+                {5, 6, 7, 8},
+                {9, 8, 7, 6},
+                {5, 4, 3, 2}};
         zeroDiagonalSquad(squadArray);
+
+        for (int i = 0; i < squadArray.length; i++) {
+            for (int j = 0; j < squadArray[i].length; j++) {
+                System.out.print(squadArray[i][j] + " ");
+            }
+            System.out.println("");
+        }
 
         System.out.println("");
         int maxNumber = findMax(arr);
@@ -25,7 +32,7 @@ public class MainApp {
 
         System.out.println("");
         int sumRow = 0;
-        int[][] arrData = {{1,2,3,4},{4,5,6,7,8,9,10}};
+        int[][] arrData = {{1, 2, 3, 4}, {4, 5, 6, 7, 8, 9, 10}};
         sumRow = sumSecondRow(arrData);
         System.out.println(sumRow);
 
@@ -44,7 +51,7 @@ public class MainApp {
         return sum;
     }
 
-    public static void printSquad(int size) {
+    public static void printSquare(int size) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 System.out.print("* ");
@@ -62,13 +69,11 @@ public class MainApp {
                 if (i == arr.length - 1 - j) {
                     arr[i][j] = 0;
                 }
-                System.out.print(arr[i][j] + " ");
             }
-            System.out.println("");
         }
     }
 
-    public static int findMax(int[][] arr){
+    public static int findMax(int[][] arr) {
         int max = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -80,18 +85,18 @@ public class MainApp {
         return max;
     }
 
-    public static int sumSecondRow(int[][] arr){
+    public static int sumSecondRow(int[][] arr) {
         int sum = 0;
         if (arr.length == 1) {
             return -1;
         }
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                if (i == 1){
+                if (i == 1) {
                     sum += arr[i][j];
                 }
             }
-            if (i == 1){
+            if (i == 1) {
                 return sum;
             }
         }
