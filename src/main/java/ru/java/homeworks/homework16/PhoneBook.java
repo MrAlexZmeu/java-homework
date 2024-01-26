@@ -20,10 +20,10 @@ public class PhoneBook {
         return book.get(fio);
     }
 
-    public void containsPhoneNumber(String number){
-        for (Map.Entry<String, Set<String>> values: book.entrySet()) {
-            if(values.getValue().contains(number)){
-                System.out.println("Контакт существует в справочнике. Его имя "+values.getKey());
+    public void containsPhoneNumber(String number) {
+        for (Map.Entry<String, Set<String>> values : book.entrySet()) {
+            if (values.getValue().contains(number)) {
+                System.out.println("Контакт существует в справочнике. Его имя " + values.getKey());
                 return;
             }
         }
