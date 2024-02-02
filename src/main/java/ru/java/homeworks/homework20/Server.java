@@ -18,9 +18,7 @@ public class Server {
 
                     writer.writeUTF("Список доступных операций: +,-,*,/");
                     writer.flush();
-                    System.out.println("1");
                     String operandA = reader.readUTF();
-                    System.out.println("2");
                     String operandB = reader.readUTF();
                     String operation = reader.readUTF();
                     writer.writeUTF(getResult(operandA, operandB, operation));
