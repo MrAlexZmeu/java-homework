@@ -69,10 +69,9 @@ public class MainApplication {
         }
     }
 
-
     public static void workWithTxtFile(File file) {
         System.out.println("Введите последовательность символов");
-        String findLine = SCANNER.nextLine();
+        String findLine = SCANNER.next();
         int result = 0;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file.getPath()))) {
