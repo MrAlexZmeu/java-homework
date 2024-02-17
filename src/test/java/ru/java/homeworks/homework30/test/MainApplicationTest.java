@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 
 import ru.java.homeworks.homework30.MainApplication;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MainApplicationTest {
@@ -32,6 +33,8 @@ public class MainApplicationTest {
     public void testArrayConsistOfOneTwo(){
         int[] test = {1,2};
         assertTrue(MainApplication.arrayConsistOfOneTwo(test));
+        int[] test1 = {1,1};
+        assertFalse(MainApplication.arrayConsistOfOneTwo(test1));
     }
 
 }

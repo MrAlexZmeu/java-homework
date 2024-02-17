@@ -1,6 +1,5 @@
 package ru.java.homeworks.homework30;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class MainApplication {
@@ -9,6 +8,8 @@ public class MainApplication {
         System.out.println(Arrays.toString(arrayAfterLastOne(arr)));
         int[] arrOne = {1,1};
         System.out.println(arrayConsistOfOneTwo(arrOne));
+        int[] arrOne1 = {1,2};
+        System.out.println(arrayConsistOfOneTwo(arrOne1));
     }
 
     public static int[] arrayAfterLastOne(int[] arr) {
@@ -35,7 +36,7 @@ public class MainApplication {
         int countOne = 0;
         int countTwo = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 2 && arr[i] < 1) {
+            if (arr[i] > 2 || arr[i] < 1) {
                 return false;
             }
             if (arr[i] == 1) {
@@ -48,6 +49,6 @@ public class MainApplication {
         if (countOne == 0 || countTwo == 0) {
             return false;
         }
-        return false;
+        return true;
     }
 }
